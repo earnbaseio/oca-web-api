@@ -9,6 +9,11 @@ _logger = logging.getLogger(__name__)
 
 
 def post_init_hook(env):
+    """Post-init hook for endpoint_route_handler module.
+
+    Args:
+        env: Odoo environment
+    """
     # this is the trigger that sends notifications when jobs change
     _logger.info("Create table")
     EndpointRegistry._setup_db(env.cr)
